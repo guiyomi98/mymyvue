@@ -1,0 +1,30 @@
+//
+// Mixins
+// --------------------------------------------------
+
+// FONT
+@mixin font($c: false, $s: false, $w: false, $l: false, $h: false) {
+  // @if $f { font-family: 'Spoqa Han Sans Neo', -apple-system, BlinkMacSystemFont, 'Malgun Gothic', Roboto, "Helvetica Neue", sans-serif; }
+  @if $c { color: $c; }
+  @if $s { font-size: $s * 0.1rem; }
+  @if $w { font-weight: $w; }
+  @if $l {
+  @if $l == normal {
+      letter-spacing: normal;
+  } @else {
+      letter-spacing: $l * -0.01rem;
+    }
+  }
+  @if $h {
+    @if $h == normal {
+      line-height: normal;
+    } @else {
+      line-height: $h;
+    }
+  }
+}
+
+// BORDER
+@function line($v) {
+  @return solid 1px $v;
+}
